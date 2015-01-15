@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <title>HSIMP Demo</title>
+
+        <style>
+            body {
+                font-family: sans-serif;
+                font-size: 1em;
+                font-weight: 300;
+            }
+
+            input {
+                font-family: sans-serif;
+                font-size: 1em;
+                font-weight: 300;
+                color: #888;
+                border: 1px solid #bbb;
+                border-radius: 3px;
+                padding: 0.25em 10px;
+                line-height: 1.5em;
+            }
+
+            label::after {
+                content: ":";
+            }
+
+            div {
+                margin-bottom: 10px;
+            }
+
+            .hsimp-time {
+                display: inline;
+                margin-left: 10px;
+            }
+
+            .hsimp-checks li {
+                list-style: none;
+            }
+
+            .hsimp-checks h2 {
+                font-size: 0.8em;
+                margin-bottom: 0;
+            }
+
+            .hsimp-checks p {
+                margin-top: 0;
+                font-size: 0.7em;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/hsimp.css">
+    </head>
+    <body>
+        <label>Password</label>
+        <input id="password-box" type="password" />
+        <div id="password-time" class="hsimp-time"></div>
+        <ul id="password-checks" class="hsimp-checks"></ul>
+
+        <script src="/hsimp.min.js"></script>
+        <script>
+            (function (doc) {
+                var passwordInput = doc.getElementById("password-box"),
+                    timeDiv = doc.getElementById("password-time"),
+                    checksList = doc.getElementById("password-checks");
+
+                var setup = hsimp({
+                    outputTime: function (text, input) {
+                        timeDiv.innerHTML = text || "";
+                    },
+
+                    outputChecks: function (checks, input) {
+                        checksList.innerHTML = "";
+
+                        for (var i = 0, l = checks.length; i < l; i++) {
+                            var li = doc.createElement("li"),
+                                title = doc.createElement("h2"),
+                                message = doc.createElement("p");
+
+                            title.innerHTML = checks[i].name;
+                            li.appendChild(title);
+
+                            message.innerHTML = checks[i].message;
+                            li.appendChild(message);
+
+                            checksList.appendChild(li);
+                        }
+                    }
+                });
+
+                setup(passwordInput);
+            }(this.document));
+        </script>
+    </body>
+</html>

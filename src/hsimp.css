@@ -1,0 +1,18 @@
+.hsimp-level {
+    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
+    transition: background 0.5s linear;
+    background-color: #fff;
+}
+
+.hsimp-level--bad, .hsimp-level--insecure {
+    background-color: #C63136;
+}
+
+.hsimp-level--ok {
+    background-color: #DE7B46;
+}
+
+.hsimp-level--good {
+    background-color: #2F8249;
+}

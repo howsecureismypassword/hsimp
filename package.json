@@ -12,11 +12,13 @@
     "main": "git://github.com/howsecureismypassword/modules-main.git#develop",
     "named-numbers": "git://github.com/howsecureismypassword/modules-named-number.git#develop",
     "period": "git://github.com/howsecureismypassword/modules-period.git#develop",
-    "checker": "git://github.com/howsecureismypassword/modules-checker.git#develop"
+    "checker": "git://github.com/howsecureismypassword/modules-checker.git#develop",
+    "library": "git://github.com/howsecureismypassword/modules-library.git#develop"
   },
   "devDependencies": {
     "browserify": "8.*",
     "buster": "0.7.*",
-    "uglify-js": "2.*"
+    "uglify-js": "2.*",
+    "uglifycss": "0.0.11"
   }
 }
