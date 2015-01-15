@@ -6,13 +6,23 @@
         <title>HSIMP Test</title>
     </head>
     <body>
-        <label>Password</label>
-        <input id="password-box" type="password" />
+        <div>
+            <label>Password</label>
+            <input class="password-box" type="password" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input class="password-box" type="password" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input class="password-box" type="password" />
+        </div>
 
         <script src="/hsimp.concat.js"></script>
         <script>
-            var passwordInput = document.getElementById("password-box");
-            hsimp(passwordInput);
+            var passwordInputs = [].slice.call(document.getElementsByClassName("password-box"));
+            passwordInputs.forEach(hsimp);
         </script>
     </body>
 </html>
