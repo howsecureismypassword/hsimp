@@ -8,6 +8,12 @@ Rather then just saying a password is "weak" or "strong", *How Secure is My Pass
 
 # Setup
 
+## Installation
+
+```shell
+bower install hsimp
+```
+
 ## CSS
 Copy the `build/hsimp.css` file to your `css` directory and include it in your document `<head>`:
 
