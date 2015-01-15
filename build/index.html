@@ -66,37 +66,43 @@
                     timeDiv = doc.getElementById("password-time"),
                     checksList = doc.getElementById("password-checks");
 
-                var setup = hsimp({
+                // Code to render the time returned by HSIMP
+                var renderTime = function (text, input) {
+                    timeDiv.innerHTML = text || "";
+                };
+
+                // Code to output the checks returned by HSIMP
+                var renderChecks = function (checks, input) {
+                    checksList.innerHTML = "";
+
+                    for (var i = 0, l = checks.length; i < l; i++) {
+                        var li = doc.createElement("li"),
+                            title = doc.createElement("h2"),
+                            message = doc.createElement("p");
+
+                        title.innerHTML = checks[i].name;
+                        li.appendChild(title);
+
+                        message.innerHTML = checks[i].message;
+                        li.appendChild(message);
+
+                        checksList.appendChild(li);
+                    }
+                };
+
+                // Setup the HSIMP object
+                var attachTo = hsimp({
                     options: {
                         calculationsPerSecond: 1e20,
                         good: 31557600e9,
                         ok: 31557600e3
                     },
-
-                    outputTime: function (text, input) {
-                        timeDiv.innerHTML = text || "";
-                    },
-
-                    outputChecks: function (checks, input) {
-                        checksList.innerHTML = "";
-
-                        for (var i = 0, l = checks.length; i < l; i++) {
-                            var li = doc.createElement("li"),
-                                title = doc.createElement("h2"),
-                                message = doc.createElement("p");
-
-                            title.innerHTML = checks[i].name;
-                            li.appendChild(title);
-
-                            message.innerHTML = checks[i].message;
-                            li.appendChild(message);
-
-                            checksList.appendChild(li);
-                        }
-                    }
+                    outputTime: renderTime,
+                    outputChecks: renderChecks
                 });
 
-                setup(passwordInput);
+                // Run the HSIMP
+                attachTo(passwordInput);
             }(this.document));
         </script>
     </body>
