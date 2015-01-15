@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <title>HSIMP Test</title>
+    </head>
+    <body>
+        <label>Password</label>
+        <input id="password-box" type="password" />
+
+        <script src="/hsimp.concat.js"></script>
+        <script>
+            var passwordInput = document.getElementById("password-box");
+            hsimp(passwordInput);
+        </script>
+    </body>
+</html>
