@@ -1,0 +1,31 @@
+{
+  "name": "how-secure-is-my-password",
+  "version": "0.1.0",
+  "homepage": "https://github.com/howsecureismypassword/hsimp",
+  "authors": [
+    "Mark Wales <mark@smallhadroncollider.com>"
+  ],
+  "description": "The \"How Secure is My Password?\" password strength meter for your own site",
+  "main": "build/hsimp.min.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "password",
+    "security",
+    "how",
+    "secure",
+    "is",
+    "my",
+    "hsimp",
+    "strength",
+    "meter",
+    "test"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules"
+  ]
+}
