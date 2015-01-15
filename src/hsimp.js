@@ -15,8 +15,11 @@ var hsimp = L.curry(function (options, input) {
     var classes = input.getAttribute("class") + " hsimp-level";
     var outputText = L.isFunction(options.outputTime) ? options.outputTime : L.noOp;
     var outputChecks = L.isFunction(options.outputChecks) ? options.outputChecks : L.noOp;
+    var hsimpOptions = L.isObject(options.options) ? options.options : {};
 
     input.setAttribute("class", classes);
+
+    main.setOptions(hsimpOptions);
 
     input.addEventListener("keyup", function () {
         var password = main(input.value);

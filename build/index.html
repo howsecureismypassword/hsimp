@@ -67,6 +67,12 @@
                     checksList = doc.getElementById("password-checks");
 
                 var setup = hsimp({
+                    options: {
+                        calculationsPerSecond: 1e20,
+                        good: 31557600e9,
+                        ok: 31557600e3
+                    },
+
                     outputTime: function (text, input) {
                         timeDiv.innerHTML = text || "";
                     },
