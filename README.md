@@ -1,6 +1,6 @@
 # How Secure Is My Password?
 
-Now you can use the [howsecureismypassword.net](https://howsecureimsypassword.net) password strength meter on your own sites.
+Now you can use the [howsecureismypassword.net](https://howsecureismypassword.net) password strength meter on your own sites.
 
 # About
 
