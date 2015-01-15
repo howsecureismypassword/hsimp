@@ -3,12 +3,15 @@ PATH  := node_modules/.bin:make/bin:$(PATH)
 
 .PHONY: build watch
 
-build: hsimp.min.js
-watch: hsimp.concat.js
+build: build/hsimp.min.js build/hsimp.css
+watch: build .watch.ref
 
-hsimp.min.js: hsimp.js
-	browserify -s hsimp hsimp.js | uglifyjs -m -c > hsimp.min.js
-
-hsimp.concat.js: hsimp.js
-	browserify -s hsimp hsimp.js > hsimp.concat.js
+.watch.ref: src/hsimp.js src/hsimp.css build/index.html
+	touch .watch.ref
 	@ chrome-canary-cli reload
+
+build/hsimp.min.js: src/hsimp.js
+	browserify -s hsimp src/hsimp.js | uglifyjs -m -c > build/hsimp.min.js
+
+build/hsimp.css: src/hsimp.css
+	uglifycss src/hsimp.css > build/hsimp.css
