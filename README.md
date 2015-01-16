@@ -4,7 +4,7 @@ Now you can use the [howsecureismypassword.net](https://howsecureismypassword.ne
 
 # About
 
-Rather then just saying a password is "weak" or "strong", *How Secure is My Password?* lets your users know how long it would take someone to crack their password. It also checks against the top 10,000 most common passwords as well as a number of other checks (such as repeated strings, telephone numbers, and words followed by numbers).
+Rather than just saying a password is "weak" or "strong", *How Secure is My Password?* lets your users know how long it would take someone to crack their password. It also checks against the top 10,000 most common passwords as well as a number of other checks (such as repeated strings, telephone numbers, and words followed by numbers).
 
 # Setup
 
