@@ -13,7 +13,7 @@ var hsimp = L.curry(function (options, input) {
     }
 
     var classes = input.getAttribute("class") + " hsimp-level";
-    var outputText = L.isFunction(options.outputTime) ? options.outputTime : L.noOp;
+    var outputTime = L.isFunction(options.outputTime) ? options.outputTime : L.noOp;
     var outputChecks = L.isFunction(options.outputChecks) ? options.outputChecks : L.noOp;
     var hsimpOptions = L.isObject(options.options) ? options.options : {};
 
@@ -26,11 +26,11 @@ var hsimp = L.curry(function (options, input) {
 
         if (input.value.length) {
             input.setAttribute("class", classes + " hsimp-level--" + password.getSecurityLevel());
-            outputText(password.getString(), input);
+            outputTime(password.getString(), input);
             outputChecks(password.getChecks(), input);
         } else {
             input.setAttribute("class", classes);
-            outputText(false, input);
+            outputTime(false, input);
             outputChecks([]);
         }
     });

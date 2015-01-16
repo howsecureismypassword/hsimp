@@ -42,8 +42,8 @@ hsimp({
         good: 31557600e3, // 1,000 years
         ok: 31557600 // 1 year
     },
-    outputText: function (text, input) {
-        console.log(text, input);
+    outputTime: function (time, input) {
+        console.log(time, input);
     },
     outputChecks: function (checks, input) {
         console.log(checks, input);
@@ -67,16 +67,16 @@ Currently there are three supported options:
 - `good`: the minimum time (in seconds) that a "good" (green) password would take to crack (default: 31557600e6 - 1 million years)
 - `ok`: the minimum time (in seconds) that an "ok" (orange) password would take to crack (default: 31557600 - 1 year)
 
-### `outputText`
+### `outputTime`
 
-The `outputText` function is passed two variables: the time it would take to crack the password (as a human-readable string) and (optionally) the input which it refers to.
+The `outputTime` function is passed two variables: the time it would take to crack the password (as a human-readable string) and (optionally) the input which it refers to.
 
 ```javascript
-var renderText = function (text, input) {
-    document.getElementById("password-strength").innerHTML(text);
+var renderTime = function (time, input) {
+    document.getElementById("password-strength").innerHTML(time);
 }
 
-hsimp({ outputText: renderText }, document.getElementById("password"));
+hsimp({ outputTime: renderTime }, document.getElementById("password"));
 ```
 
 ### `outputChecks`
