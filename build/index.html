@@ -93,9 +93,9 @@
                 // Setup the HSIMP object
                 var attachTo = hsimp({
                     options: {
-                        calculationsPerSecond: 1e20,
-                        good: 31557600e9,
-                        ok: 31557600e3
+                        calculationsPerSecond: 10e9 // 10 billion calculations per second,
+                        good: 31557600e9 // 1 billion years,
+                        ok: 31557600e3 // 1 thousand years
                     },
                     outputTime: renderTime,
                     outputChecks: renderChecks
