@@ -1,11 +1,12 @@
 "use strict";
 
-var main = require("main");
-var L = require("library");
+var main = require("hsimp-main");
+var L = require("hsimp-library");
 
-main.setNamedNumberDictionary(require("named-number/named-number-dictionary"));
-main.setPeriodDictionary(require("period/period-dictionary"));
-main.setCheckerDictionary(require("checker/checker-dictionary"));
+main.setNamedNumberDictionary(require("hsimp-named-number/named-number-dictionary"));
+main.setPeriodDictionary(require("hsimp-period/period-dictionary"));
+main.setCheckerDictionary(require("hsimp-checker/checker-dictionary"));
+main.setCheckerChecks(require("hsimp-checker/checks/patterns").concat(require("hsimp-checker/checks/top10k")));
 
 var hsimp = L.curry(function (options, input) {
     if (!input || !L.isFunction(input.click)) {
