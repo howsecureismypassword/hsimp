@@ -1,6 +1,6 @@
 {
   "name": "how-secure-is-my-password",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "How Secure Is My Password?",
   "author": "Small Hadron Collider",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "url": "http://github.com/howsecureismypassword/hsimp.git"
   },
   "dependencies": {
-    "hsimp-main": "0.1.6",
+    "hsimp-main": "0.1.9",
     "hsimp-checks": "0.1.2"
   },
   "devDependencies": {
