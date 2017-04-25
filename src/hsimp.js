@@ -33,4 +33,16 @@ var hsimp = L.curry(function (options, input) {
     });
 });
 
+// see https://github.com/howsecureismypassword/modules-main/blob/develop/dictionary.json
+hsimp.setDictionary = main.setDictionary; 
+
+// see https://github.com/howsecureismypassword/modules-period/blob/develop/period-dictionary.json
+hsimp.setPeriodDictionary = main.setPeriodDictionary;
+
+// see https://github.com/howsecureismypassword/modules-named-number/blob/develop/named-number-dictionary.json
+hsimp.setNamedNumberDictionary = main.setNamedNumberDictionary 
+
+// see https://github.com/howsecureismypassword/modules-checker/blob/develop/checker-dictionary.json
+hsimp.setCheckerDictionary = main.setCheckerDictionary;
+
 module.exports = hsimp;

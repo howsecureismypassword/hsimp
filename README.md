@@ -104,6 +104,26 @@ Each check result is an object with three properties:
 }
 ```
 
+## Language
+
+You can update the language files using the following methods each of which accepts an object:
+
+### `hsimp.setDictionary(lang)`
+
+Sets the values for "instantly" and "forever". See [https://github.com/howsecureismypassword/modules-main/blob/develop/dictionary.json](https://github.com/howsecureismypassword/modules-main/blob/develop/dictionary.json)
+
+### `hsimp.setPeriodDictionary(lang)`
+
+Sets up the periods (e.g. seconds, days, years, etc.). See [https://github.com/howsecureismypassword/modules-period/blob/develop/period-dictionary.json](https://github.com/howsecureismypassword/modules-period/blob/develop/period-dictionary.json)
+
+### `hsimp.setNamedNumberDictionary(lang)`
+
+Sets up number names. See [https://github.com/howsecureismypassword/modules-named-number/blob/develop/named-number-dictionary.json](https://github.com/howsecureismypassword/modules-named-number/blob/develop/named-number-dictionary.json)
+
+### `hsimp.setCheckerDictionary(lang)`
+
+Sets up the wording of the various checks. See [https://github.com/howsecureismypassword/modules-checker/blob/develop/checker-dictionary.json](https://github.com/howsecureismypassword/modules-checker/blob/develop/checker-dictionary.json)
+
 ## Currying
 
 The `hsimp` function supports currying. This means you can set the options once and then use the returned function to setup more than one input:
