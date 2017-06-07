@@ -45,7 +45,7 @@ The `hsimp` function takes two arguments: a configuration object and an HTML `<i
 ```javascript
 hsimp({
     options: {
-        calculationsPerSecond: 1e10 // 10 billion,
+        calculationsPerSecond: 1e10, // 10 billion,
         good: 31557600e3, // 1,000 years
         ok: 31557600 // 1 year
     },
@@ -80,7 +80,7 @@ The `outputTime` function is passed two variables: the time it would take to cra
 
 ```javascript
 var renderTime = function (time, input) {
-    document.getElementById("password-strength").innerHTML(time);
+    document.getElementById("password-strength").innerHTML = time;
 }
 
 hsimp({ outputTime: renderTime }, document.getElementById("password"));
