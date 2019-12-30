@@ -52,9 +52,15 @@ hsimp({
     outputTime: function (time, input) {
         console.log(time, input);
     },
+    outputTimeInSeconds: function( timeInSeconds, input) {
+        console.log(timeInSeconds, input);
+    },    
     outputChecks: function (checks, input) {
         console.log(checks, input);
-    }
+    },
+    outputSecurityLevel: function( securityLevel, input) {
+        console.log(securityLevel, input);
+    },    
 }, document.getElementById("password"));
 ```
 
@@ -63,8 +69,10 @@ hsimp({
 The configuration object supports three properties:
 
 - `options`: an object of options that affect calculations
-- `outputTime`: a function that is passed the length of time it would take to crack the given password
+- `outputTime`: a function that is passed the length of time it would take to crack the given password (in words)
+- `outputTimeInSeconds `: a function that is passed the length of time it would take to crack the given password (in seconds)
 - `outputChecks`: a function that is passed a list of results from various checks
+- `outputSecurityLevel `: a function that is passed the security level of the current password
 
 ### `options`
 
@@ -86,6 +94,18 @@ var renderTime = function (time, input) {
 hsimp({ outputTime: renderTime }, document.getElementById("password"));
 ```
 
+### `outputTimeInSeconds `
+
+The `outputTimeInSeconds ` function is passed two variables: the time it would take to crack the password (as a number) and (optionally) the input which it refers to.
+
+```javascript
+var renderTimeInSeconds = function (timeInSeconds, input) {
+    document.getElementById("password-strength").innerHTML = timeInSeconds;
+}
+
+hsimp({ outputTimeInSeconds: renderTimeInSeconds }, document.getElementById("password"));
+```
+
 ### `outputChecks`
 
 The `outputChecks` function is passed two variables: an array of check results and (optionally) the input which it refers to.
@@ -102,6 +122,20 @@ Each check result is an object with three properties:
     message: "Your password is very short. The longer a password is the more secure it will be.",
     level: "warning"
 }
+```
+
+### `outputSecurityLevel `
+
+The `outputSecurityLevel ` function is passed two variables: a string of the security level of the password and (optionally) the input which it refers to.
+
+The security level has the values: `good`, `ok`, `bad`, `insecure`.
+
+```javascript
+var renderSecurityLevel = function (securityLevel, input) {
+    document.getElementById("password-security-level").innerHTML = securityLevel;
+}
+
+hsimp({ outputSecurityLevel: renderSecurityLevel }, document.getElementById("password"));
 ```
 
 ## Language
